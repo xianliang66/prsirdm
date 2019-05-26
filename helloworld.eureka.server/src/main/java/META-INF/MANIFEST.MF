@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: springcloud.helloworld.eureka.server.EurekaServerApplicati
+ on
+
