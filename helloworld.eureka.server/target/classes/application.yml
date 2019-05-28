@@ -1,6 +1,5 @@
 server:
   port: 8761
-
 eureka:
   instance:
     hostname: 101.132.181.128
