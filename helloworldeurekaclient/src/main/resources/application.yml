@@ -1,0 +1,30 @@
+server:
+  port: 8770
+
+spring:
+  application:
+    name: CrowdSourcingRibbon
+  zipkin:
+    base-url: http://101.132.181.128:9411/
+  sleuth:
+    sampler:
+      probability: 1.0
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://101.132.181.128:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+
+providers:
+  ribbon:
+    listOfServers: 101.132.181.128:8771,101.132.181.128:8772
