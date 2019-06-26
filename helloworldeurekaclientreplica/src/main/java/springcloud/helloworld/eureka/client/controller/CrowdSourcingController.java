@@ -1,21 +1,34 @@
 package springcloud.helloworld.eureka.client.controller;
 
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @RestController
+@Configuration
 public class CrowdSourcingController {
-    @RequestMapping(value = "/getAll", method = GET, produces = "application/json")
-    public String getAll() {
-        return "hehe";
+    @Bean
+    @LoadBalanced
+    public RestTemplate getRestTemplate(){
+        return new RestTemplate();
     }
-    @RequestMapping(value = "/getByID", method = GET, produces = "application/json")
-    public String getByID(Long ID) {
-        return String.valueOf(ID) + "aaaa";
+    @RequestMapping(value = "/getOneImage", method = RequestMethod.GET)
+    public String getOneImage(@RequestParam("itemId") String id) {
+        RestTemplate rt = getRestTemplate();
+        String result = rt.getForObject("http://CrowdSourcing/getOneImage?itemId={id}", String.class, id);
+        return result;
+    }
+
+    @RequestMapping(value = "/putOneImage", method = RequestMethod.POST)
+    public String putOneImage(@RequestParam("itemId") String id, @RequestBody String body) {
+        RestTemplate rt = getRestTemplate();
+        String result = rt.postForObject("http://CrowdSourcing/putOneImage", body, String.class);
+        return result;
     }
 }

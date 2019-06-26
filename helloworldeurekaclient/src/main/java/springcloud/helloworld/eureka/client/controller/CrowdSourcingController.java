@@ -1,6 +1,7 @@
 package springcloud.helloworld.eureka.client.controller;
 
 import com.fasterxml.jackson.databind.util.ArrayBuilders;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -33,8 +34,9 @@ public class CrowdSourcingController {
     public String getOneImage(@RequestParam("itemId") String id) {
         String result = "Not Found";
         try {
-            File image = loadFile("srcImage/" + id + ".jpg");
-            FileInputStream fin = new FileInputStream(image);
+            //File image = loadFile("srcImage/" + id + ".jpg");
+            //FileInputStream fin = new FileInputStream(image);
+            InputStream fin = loadInputStream("srcImage/" + id + ".jpg");
             ByteArrayOutputStream bout = new ByteArrayOutputStream();
 
             int r;
@@ -72,6 +74,11 @@ public class CrowdSourcingController {
     private static File loadFile(String filename) throws IOException {
         return new ClassPathResource(
                 filename).getFile();
+    }
+
+    private static InputStream loadInputStream(String filename) throws IOException {
+        return new ClassPathResource(
+                filename).getInputStream();
     }
 }
 

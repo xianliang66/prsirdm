@@ -2,19 +2,17 @@
 
 spring:
   application:
-    name: CrowdSourcing
+    name: CrowdSourcingRibbon
   zipkin:
     base-url: http://101.132.181.128:9411/
   sleuth:
     sampler:
       probability: 1.0
+
 eureka:
   client:
     service-url:
       defaultZone: http://101.132.181.128:8761/eureka/
-  instance:
-    prefer-ip-address: true
-    ip-address: 101.132.181.128
 
 management:
   endpoints:
