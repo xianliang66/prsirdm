@@ -24,8 +24,3 @@ management:
   metrics:
     tags:
       application: ${spring.application.name}
-
-
-providers:
-  ribbon:
-    listOfServers: 101.132.181.128:8771,101.132.181.128:8772
