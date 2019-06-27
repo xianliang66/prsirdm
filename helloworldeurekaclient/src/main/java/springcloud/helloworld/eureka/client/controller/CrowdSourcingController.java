@@ -55,11 +55,9 @@ public class CrowdSourcingController {
     @RequestMapping(value = "/putOneImage", method = RequestMethod.POST)
     public String getAl(@RequestParam("itemId") String id, @RequestBody String body) {
         try {
-            File f = loadFile("destImage/" + id + ".jpg");
-            if (!f.exists()) {
-                f.createNewFile();
-            }
-            OutputStream fout = new FileOutputStream(f);
+            File image = loadFile("destImage/" + id + ".jpg");
+
+            OutputStream fout = new FileOutputStream(image);
 
             byte[] bytes = Base64.getDecoder().decode(body);
             fout.write(bytes);
@@ -76,8 +74,11 @@ public class CrowdSourcingController {
      * @return File indicated by the filename.
      */
     private static File loadFile(String filename) throws IOException {
-        return new ClassPathResource(
-                filename).getFile();
+        File f = new File(filename);
+        if (!f.exists()) {
+            f.createNewFile();
+        }
+        return f;
     }
 
     private static InputStream loadInputStream(String filename) throws IOException {
