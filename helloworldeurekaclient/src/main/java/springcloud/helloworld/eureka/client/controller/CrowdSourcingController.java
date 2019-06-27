@@ -32,7 +32,7 @@ public class CrowdSourcingController {
 
     @RequestMapping(value = "/getOneImage", method = RequestMethod.GET)
     public String getOneImage(@RequestParam("itemId") String id) {
-        String result = "Not Found";
+        String result = "Not Found: ";
         try {
             //File image = loadFile("srcImage/" + id + ".jpg");
             //FileInputStream fin = new FileInputStream(image);
@@ -47,7 +47,7 @@ public class CrowdSourcingController {
             result = Base64.getEncoder().encodeToString(bout.toByteArray());
         } catch (IOException e) {
             e.printStackTrace();
-            return result;
+            return result + e.toString();
         }
         return result;
     }
@@ -65,7 +65,8 @@ public class CrowdSourcingController {
             fout.write(bytes);
         } catch (IOException e) {
             e.printStackTrace();
-            return "FAILED";
+
+            return "FAILED: " + e.toString();
         }
         return "SUCCESS";
     }
