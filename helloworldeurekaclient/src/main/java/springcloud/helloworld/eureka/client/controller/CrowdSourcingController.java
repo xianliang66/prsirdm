@@ -56,7 +56,6 @@ public class CrowdSourcingController {
     public String putOneImage(@RequestParam("itemId") String id, @RequestBody String body) {
         try {
             File f = new File(id + ".jpg");
-            f.createNewFile();
 
             FileOutputStream fout = new FileOutputStream(f);
 

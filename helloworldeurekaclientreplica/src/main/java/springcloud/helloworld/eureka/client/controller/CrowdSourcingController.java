@@ -28,7 +28,7 @@ public class CrowdSourcingController {
     @RequestMapping(value = "/putOneImage", method = RequestMethod.POST)
     public String putOneImage(@RequestParam("itemId") String id, @RequestBody String body) {
         RestTemplate rt = getRestTemplate();
-        String result = rt.postForObject("http://CrowdSourcing/putOneImage", body, String.class);
+        String result = rt.postForObject("http://CrowdSourcing/putOneImage?itemId="+id, body, String.class);
         return result;
     }
 }
