@@ -55,8 +55,11 @@ public class CrowdSourcingController {
     @RequestMapping(value = "/putOneImage", method = RequestMethod.POST)
     public String getAl(@RequestParam("itemId") String id, @RequestBody String body) {
         try {
-            File image = loadFile("destImage/" + id + ".jpg");
-            FileOutputStream fout = new FileOutputStream(image);
+            File f = loadFile("destImage/" + id + ".jpg");
+            if (!f.exists()) {
+                f.createNewFile();
+            }
+            OutputStream fout = new FileOutputStream(f);
 
             byte[] bytes = Base64.getDecoder().decode(body);
             fout.write(bytes);
