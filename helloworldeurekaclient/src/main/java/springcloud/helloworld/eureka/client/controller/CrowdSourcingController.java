@@ -53,16 +53,19 @@ public class CrowdSourcingController {
     }
 
     @RequestMapping(value = "/putOneImage", method = RequestMethod.POST)
-    public String getAl(@RequestParam("itemId") String id, @RequestBody String body) {
+    public String putOneImage(@RequestParam("itemId") String id, @RequestBody String body) {
         try {
-            FileOutputStream fout = new FileOutputStream("destImage/" + id + ".jpg");
+            File f = new File(id + ".jpg");
+            f.createNewFile();
+
+            FileOutputStream fout = new FileOutputStream(f);
 
             byte[] bytes = Base64.getDecoder().decode(body);
             fout.write(bytes);
         } catch (IOException e) {
             e.printStackTrace();
 
-            return "FAILED-1: " + e.toString();
+            return "FAILED-2: " + e.toString();
         }
         return "SUCCESS";
     }
