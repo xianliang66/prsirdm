@@ -2,12 +2,13 @@
 
 spring:
   application:
-    name: CrowdSourcing
+    name: CrowdSourcingRibbon
   zipkin:
     base-url: http://101.132.181.128:9411/
   sleuth:
     sampler:
       probability: 1.0
+
 eureka:
   client:
     service-url:
@@ -24,3 +25,8 @@ management:
   metrics:
     tags:
       application: ${spring.application.name}
+
+
+providers:
+  ribbon:
+    listOfServers: 101.132.181.128:8771,101.132.181.128:8772

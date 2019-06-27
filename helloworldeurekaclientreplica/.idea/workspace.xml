@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2265ee71-7d33-41ac-9640-94d05f72962a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../helloworldeurekaclient/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cloudprometheus/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cloudprometheus/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../helloworld.eureka.server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../helloworld.eureka.server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../helloworld.eureka.server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../helloworld.eureka.server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../helloworld.eureka.server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../helloworld.eureka.server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../helloworld.eureka.server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../helloworld.eureka.server/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../helloworld.eureka.server/target/springcloud.helloworld.eureka.server-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../helloworld.eureka.server/target/springcloud.helloworld.eureka.server-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../helloworld.eureka.server/target/springcloud.helloworld.eureka.server-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../helloworld.eureka.server/target/springcloud.helloworld.eureka.server-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../helloworldeurekaclient/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../helloworldeurekaclient/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../helloworldeurekaclient/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../helloworldeurekaclient/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../helloworldeurekaclient/src/main/java/springcloud/helloworld/eureka/client/controller/CrowdSourcingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../helloworldeurekaclient/src/main/java/springcloud/helloworld/eureka/client/controller/CrowdSourcingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../helloworldeurekaclient/src/main/resources/application.properties" beforeDir="false" />
-    </list>
+    <list default="true" id="2265ee71-7d33-41ac-9640-94d05f72962a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/springcloud/helloworld/eureka/client/EurekaClientApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="325">
               <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -52,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/springcloud/helloworld/eureka/client/controller/CrowdSourcingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+            <state relative-caret-position="75">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,10 +54,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            <state relative-caret-position="625">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -90,10 +77,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/springcloud/helloworld/eureka/client/EurekaClientApplication.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
       </list>
     </option>
   </component>
@@ -132,7 +119,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -191,6 +177,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,7 +244,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23560767" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23827292" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -282,7 +269,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml" />
     <entry file="file://$PROJECT_DIR$/../README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -293,6 +279,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
@@ -302,7 +289,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/springcloud/helloworld/eureka/client/EurekaClientApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="325">
           <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -312,8 +299,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/springcloud/helloworld/eureka/client/controller/CrowdSourcingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        <state relative-caret-position="75">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -323,10 +310,10 @@
     <entry file="file://$PROJECT_DIR$/helloworldeurekaclient.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="625">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
