@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="baidu-site-verification" content="uhMOrsxVY4">
     <link rel="canonical" href="http://zb.youdao.com">
-    <title>有道众包 - AI数据生产平台</title>
+    <title>众包 - AI数据生产平台</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="keywords" content="有道众包,AI数据生产平台">
@@ -44,72 +44,79 @@
         <div class="card-container">
             <div class="list-title">
                 <span>发现任务</span>
+                <input type="button" onclick="getImages()" value="刷新任务">
             </div> 
             <div class="card-item">
                 <div class="header-container">
-                    <img src="images/image2.jpg" class="cover-image"> 
-                    <div class="mark">转写任务</div>
+                    <img id ="image1" src="images/image2.jpg" class="cover-image"> 
+                    <div class="mark">标注任务</div>
                 </div> 
                 <div class="info-container">
-                    <h1 class="title">图片内容转写6.19</h1> 
-                    <div class="left">
-                        <div class="price">1.2</div>
-                        <span class="unit">元</span> 
-                        <span class="participants-num">40题/包</span>
-                    </div> 
+                    <h1 class="title">图片内容标注</h1> 
                     <div class="right">
-                        <span class="questions-num">剩余任务包数：0</span>
+                        <input type="button" onclick="putImages()" value="标注图片">
                     </div>
                 </div>
             </div>
             <div class="card-item">
                 <div class="header-container">
-                    <img src="images/image3.jpg" class="cover-image"> 
-                    <div class="mark">转写任务</div>
+                    <img id ="image2" src="images/image3.jpg" class="cover-image"> 
+                    <div class="mark">标注任务</div>
                 </div> 
                 <div class="info-container">
-                    <h1 class="title">校对并修改图片算式内容</h1> 
-                    <div class="left">
-                        <div class="price">0.9</div>
-                        <span class="unit">元</span> 
-                        <span class="participants-num">30题/包</span>
-                    </div> 
+                    <h1 class="title">图片内容标注</h1> 
+                     
                     <div class="right">
-                        <span class="questions-num">剩余任务包数：0</span>
+                        <input type="button" onclick="putImages()" value="标注图片">
                     </div>
                 </div>
             </div>
-        <div class="card-item">
+        <!--<div class="card-item">
             <div class="header-container">
                 <img src="images/image4.jpg" class="cover-image"> 
                 <div class="mark">特别任务</div>
             </div> 
             <div class="info-container" style="padding-top: 25px;">
                 <h1 class="title">商城招募推手</h1>
+                <div class="left">
+                        <div class="price">0.9</div>
+                        <span class="unit">元</span> 
+                        <span class="participants-num">30题/包</span>
+                    </div>
+            </div>
+        </div> -->
+        <div class="card-item">
+            <div class="header-container">
+                <img id ="image3" src="images/image5.jpg" class="cover-image"> 
+                <div class="mark">标注任务</div>
+            </div> 
+            <div class="info-container" style="padding-top: 25px;">
+                <h1 class="title">图片内容标注</h1>
+                <div class="right">
+                    <input type="button" onclick="putImages()" value="标注图片">
+                </div>
             </div>
         </div>
         <div class="card-item">
             <div class="header-container">
-                <img src="images/image5.jpg" class="cover-image"> 
-                <div class="mark">特别任务</div>
+                <img id ="image4" src="images/image6.jpg" class="cover-image"> 
+                <div class="mark">标注任务</div>
             </div> 
             <div class="info-container" style="padding-top: 25px;">
-                <h1 class="title">招募线上录音员（地方口音普通话）</h1>
+                <h1 class="title">图片内容标注</h1>
+                <div class="right">
+                    <input type="button" onclick="putImages()" value="标注图片">
+                </div>
             </div>
-        </div>
-        <div class="card-item">
-            <div class="header-container">
-                <img src="images/image6.jpg" class="cover-image"> 
-                <div class="mark">特别任务</div>
-            </div> 
-            <div class="info-container" style="padding-top: 25px;">
-                <h1 class="title">招募在线外语标注人员（长期）</h1>
-            </div>
+            
         </div> 
         <div class="list-footer">
             <a href="list.html" class="more">
                 <span>更多任务</span>
             </a>
+            <!--<input type="file" id="file"  multiple="multiple">
+                <div id="imgDiv">
+                </div> -->
         </div>
     </div> 
     <div data-v-31c315e6="" class="page-footer" style="margin-top: 120px;">
@@ -131,9 +138,62 @@
         </div>
     </div>
     </div>
-    <script src="js/v1.js"></script>
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <!--<script type="text/javascript" src="css/vendor.js"></script>-->
-    <script type="text/javascript" src="css/home.js"></script>
+    <script type="text/javascript">
+        var img = "https://img.alicdn.com/bao/uploaded/TB1qimQIpXXXXXbXFXXSutbFXXX.jpg";
+       
+        function getBase64Image(img) {
+           var canvas = document.createElement("canvas");
+           canvas.width = img.width;
+           canvas.height = img.height;
+
+           var ctx = canvas.getContext("2d");
+           ctx.drawImage(img, 0, 0, img.width, img.height);
+           var ext = img.src.substring(img.src.lastIndexOf(".")+1).toLowerCase();
+           var dataURL = canvas.toDataURL("image/"+ext);
+           return dataURL;
+        }
+        var image = new Image();
+        image.crossOrigin = 'anonymous';
+        image.src = img;
+        image.onload = function(){
+           var base64 = getBase64Image(image);
+           console.log(base64);
+        }
+        
+        var getImagesUrl = "http://101.132.181.128:8771/getOneImage?";
+        function getImages(){
+            $.get(getImagesUrl + "itemId=1",function(data){
+                document.getElementById("image1").src = "data:image/jpg;base64," + data;
+            });
+            $.get(getImagesUrl + "itemId=2",function(data){
+                document.getElementById("image2").src = "data:image/jpg;base64," + data;
+            });
+            $.get(getImagesUrl + "itemId=3",function(data){
+                document.getElementById("image3").src = "data:image/jpg;base64," + data;
+            });
+            $.get(getImagesUrl + "itemId=4",function(data){
+                document.getElementById("image4").src = "data:image/jpg;base64," + data;
+            });
+        }
+        
+        var putImagesUrl = "http://101.132.181.128:8771/putOneImage?";
+        function putImages(){
+            $.post(postImagesUrl,
+            {
+                name:"Donald Duck",
+                city:"Duckburg"
+            },
+            function(data,status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        }
+        
+        
+    </script>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <!--<script src="js/v1.js"></script>
+    
+    <script type="text/javascript" src="css/vendor.js"></script>
+    <script type="text/javascript" src="css/home.js"></script>-->
 </body>
 </html>
