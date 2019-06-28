@@ -10,3 +10,5 @@ Service configuration server: <http://101.132.181.128:8762>
 Sample eureka client: 8770
 
 Service monitor: <http://101.132.181.128:9090/targets>
+
+Distributed tracing: <http://101.132.181.128:9411>
