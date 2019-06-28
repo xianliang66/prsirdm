@@ -1,0 +1,10 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: cloudprometheus
+eureka:
+  instance:
+    hostname: 101.132.181.128
+  client:
+    service-url: http://101.132.181.128:8761/eureka/
